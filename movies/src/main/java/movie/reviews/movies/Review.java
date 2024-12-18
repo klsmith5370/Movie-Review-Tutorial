@@ -8,22 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-@Document(collection = "movies")
+@Document(collection = "reviews")
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Movie {
+public class Review {
     @Id
     private ObjectId id;
-    private String imdbId;
-    private String title;
-    private String releaseData;
-    private String trailerLink;
-    private String poster;
-    private List<String> genres;
-    private List<String> backdrops;
+    private String body;
 }
