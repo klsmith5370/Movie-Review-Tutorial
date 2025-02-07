@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./Hero.css";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
@@ -9,9 +9,9 @@ const Hero = ({movies}) => {
         <div className = "movie-carousel-container">
             <Carousel>
                 {
-                    movies.map((movie) => {
+                    movies?.map((movie, index) => {
                         return (
-                            <Paper>
+                            <Paper key={index}>
                                 <div className = "movie-card-container">
                                     <div className = "movie-card">
                                         <div className = "movie-detail">
