@@ -7,9 +7,16 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div>
+        <Navbar bg="dark" variant="dark" expand="lg">
+            <Container>
+                <Navbar.Brand href="/" style={{ "color" : "gold"}}>
+                    <FontAwesomeIcon icon={faVideoSlash} /> Gold
 
-        </div>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                
+            </Container>
+        </Navbar>
 
     )
 };
