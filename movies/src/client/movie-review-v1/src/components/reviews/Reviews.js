@@ -16,9 +16,31 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
     }, []);
 
     return (
-        <div>
-            
-        </div>
+        <Container>
+            <Row>
+                <Col>
+                    <h3>Reviews</h3>
+                </Col>
+            </Row>
+
+            <Row className="mt-2">
+                <Col>
+                    <img src={movie?.poster} alt="" />
+                </Col>
+
+                <Col>
+                    {
+                        <>
+                            <Row>
+                                <Col>
+                                    <ReviewForm />
+                                </Col>
+                            </Row>
+                        </>
+                    }
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
