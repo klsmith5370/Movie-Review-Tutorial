@@ -5,7 +5,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../reviewForm/reviewForm";
 
 import React from "react";
-import { CacheProvider } from "@emotion/react";
 
 const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
     const revText = useRef();
@@ -15,6 +14,16 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
     useEffect(() => {
         getMovieData(movieId);
     }, []);
+
+    const addReview = async (e) => {
+        e.preventDefault();
+        
+        const rev = revText.current;
+
+        const response = await api.post("/api/v1/reviews", { reviewBody: rev.value, imdbId: movieId });
+
+        const updatedReviews = [...reviews, { body: rev.value }];
+    }
 
     return (
         <Container>
