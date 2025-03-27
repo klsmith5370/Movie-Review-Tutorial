@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../reviewForm/reviewForm";
 
 import React from "react";
+import { CacheProvider } from "@emotion/react";
 
 const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
     const revText = useRef();
@@ -33,11 +34,43 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                         <>
                             <Row>
                                 <Col>
-                                    <ReviewForm />
+                                    <ReviewForm handleSubmit={addReview} revText={revText} labelText="Write a Review?" />
+                                </Col>
+                            </Row>
+                            
+                            <Row>
+                                <Col>
+                                    <hr />
                                 </Col>
                             </Row>
                         </>
                     }
+
+                    {
+                        reviews?.map((r) => {
+                            return (
+                                <>
+                                    <Row>
+                                        <Col>
+                                            {r.body}
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col>
+                                            <hr />
+                                        </Col>
+                                    </Row>
+                                </>
+                            )
+                        })
+                    }
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <hr />
                 </Col>
             </Row>
         </Container>
