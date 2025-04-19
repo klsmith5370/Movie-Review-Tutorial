@@ -26,6 +26,11 @@ const Header = () => {
                     </Nav>
                     <Button variant="outline-into" className="me-2">Login</Button>
                     <Button variant="outline-info" className="me-2">Register</Button>
+                    <NavLink to="/profile">
+                        <Button variant="outline-light">
+                            <FontAwesomeIcon icon={faUser} />
+                        </Button>
+                    </NavLink>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
