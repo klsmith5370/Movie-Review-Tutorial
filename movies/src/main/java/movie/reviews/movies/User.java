@@ -10,12 +10,15 @@ public class User {
     private String id;
     private String username;
     private String email;
+    private String firstName;
+    private String lastName;
 
     public User() {}
 
     public User(String username, String email) {
         this.username = username;
         this.email = email;
+        
     }
 
     public String getId() {
@@ -33,5 +36,6 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
 
 }
