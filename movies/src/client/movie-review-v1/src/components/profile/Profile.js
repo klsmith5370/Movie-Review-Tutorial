@@ -7,7 +7,7 @@ const Profile = () => {
 
   useEffect(() => {
     // Replace with the actual API endpoint for current user
-    axios.get('/api/users/me') 
+    axios.get('/api/users/v1') 
       .then((response) => {
         setUser(response.data);
         setLoading(false);
